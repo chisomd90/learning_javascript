@@ -49,37 +49,27 @@ if (balance >= amount) {
   balance -= amount; //uber
   console.log("Transaction succesful, balance is " + balance);
 } else {
-    console.log("Insufficient Funds");
-    
+  console.log("Insufficient Funds");
 }
-
 
 //write an if else statement to check if a num is positive or negative
 
-
 const num = 76;
 
-
-if (num > 0){
-    console.log(`${num} is a positive number`);
-    
+if (num > 0) {
+  console.log(`${num} is a positive number`);
 } else {
-    console.log(`${num} is a negative number`);
-    
+  console.log(`${num} is a negative number`);
 }
-
 
 // write an if else statement to determine if a number is odd or even
 const num1 = 76;
 
 if (num1 % 2 === 0) {
-
-    console.log(`${num1} is an even number`);
-} else{
-    console.log(`${num1} is an odd number`);
-    
+  console.log(`${num1} is an even number`);
+} else {
+  console.log(`${num1} is an odd number`);
 }
-
 
 // Multiple else if
 
@@ -87,37 +77,45 @@ if (num1 % 2 === 0) {
 
 const censusResult = 52;
 
-if (censusResult >= 300){
-    console.log("Over Populated");
-    
-}else if(censusResult <= 50){
-    console.log("Under Populated");
-    
-} else{
-    console.log("balanced population");
-    
+if (censusResult >= 300) {
+  console.log("Over Populated");
+} else if (censusResult <= 50) {
+  console.log("Under Populated");
+} else {
+  console.log("balanced population");
 }
 
 // lottery system for a company a,b,c(winner),d
 const usersChoice = "a";
 
-if (usersChoice === "c"){
-    console.log("Congratulation");
+if (usersChoice === "c") {
+  console.log("Congratulation");
 } else {
-    console.log("Try again")
+  console.log("Try again");
 }
 
 // lottery system for a company a(trip to dubai),b(try again),c(winner),d(blender)
 
-
 const usersChoiceB = "a";
-if (usersChoiceB === "a"){
-    console.log('Trip to Dubai');
-} else if (usersChoiceB == "c"){
-    console.log("car");
-} else if (usersChoiceB === "d"){
-    console.log("Blender");
-}else{
-    console.log("TRY AGAIN");
-    
+if (usersChoiceB === "a") {
+  console.log("Trip to Dubai");
+} else if (usersChoiceB == "c") {
+  console.log("car");
+} else if (usersChoiceB === "d") {
+  console.log("Blender");
+} else {
+  console.log("TRY AGAIN");
+}
+
+//classwork
+//aged grouping
+
+const age1 = 100;
+
+if (age1 < 18) {
+  console.log("Teenager");
+} else if (age1 >= 18 && age1 <= 39) {
+  console.log("Young adult");
+} else {
+  console.log("Adult");
 }
