@@ -58,3 +58,23 @@ userAge >= movieRating
   
 
   userBal >= ticketPrice || userBal >= priceAfterDiscount ? console.log("You can buy the football ticket") : console.log("You do not have enough money for the football ticket");
+
+
+
+  //EXAMPLE 4
+
+  const jacketPrice = 250
+  const dicountJacket = 50
+  let userbal1 = 200
+  const priceAfterDiscount2 = jacketPrice - dicountJacket
+
+  userbal1 >= jacketPrice ? console.log("You can buy the jacket") : console.log("You do not have enough money to buy the jacket");
+  
+  //EXAMPLE 5
+
+  const minimumAge = 16
+  const studAge = 15
+
+  studAge >= minimumAge ? console.log("You are eligible for a driving license") : console.log("You are not eligible for a driving license yet");
+  
+  
