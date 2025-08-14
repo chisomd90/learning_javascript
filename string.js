@@ -52,7 +52,7 @@ console.log(myEmail.lastIndexOf("o"));
 console.log(fullName.concat(" is my name"));
 
 
-//trim rremoves whitespaces
+//trim removes whitespaces
 
 
 const username = "    user001  "
