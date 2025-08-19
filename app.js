@@ -1,52 +1,23 @@
-const africanCountries = ["Ghana", "Nigeria", "Togo", "South Africa", "Liberia"];
-console.log(africanCountries);
+//DATE object
 
-console.log(africanCountries.includes("Tanzania"));
-console.log(africanCountries.length);
+const date = new Date();
+console.log(date);
 
+//get methods
+console.log(date.getDate());
+console.log(date.getFullYear());
+console.log(date.getMonth());
 
-africanCountries.unshift("Senegal");
-console.log(africanCountries);
-
-africanCountries.push("Zimbabwe");
-console.log(africanCountries);
-
-const accToDesc = africanCountries.sort();
-console.log(accToDesc);
-console.log(accToDesc.reverse());
-
-
-const joinCountries = africanCountries.concat((["China", "Japan"]));
-console.log(joinCountries);
-
-const getUser = africanCountries.find((user) => user.startsWith("T"));
-console.log(getUser);
+//conversion
+console.log(date.toString);
+console.log(date.toDateString);
+console.log(date.toISOString);
+console.log(date.toLocaleDateString);
+console.log(date.toLocaleString);
+console.log(date.toTimeString);
+console.log(date.toLocaleTimeString);
 
 
-const getAllUser = africanCountries.filter((user) => user.length > 5);
-console.log(getAllUser);
+//All Right reserved, 2025
 
-
-africanCountries.map((africanCountries) => {
-  console.log(africanCountries.toUpperCase());
-});
-
-const checkCountries = africanCountries.every((country) => country.includes("p"));
-console.log(checkCountries);
-
-const myBal = 2000;
-const transactions = [200, -400, 30, 500, 1000]
-
-const credit = transactions.filter((credits) => credits > 0)
-console.log(credit);
-
-const debit = transactions.filter((debits) => debits > 0);
-console.log(debit);
-
-const checkBal = credit.some((cre) => cre > myBal);
-console.log(checkBal);
-
-const totalTransaction = transactions.reduce((acc, curr) => acc + curr, myBal);
-console.log(totalTransaction);
-
-
+console.log(`All right reserved, ${date.getFullYear()}`);
