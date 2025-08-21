@@ -1,106 +1,84 @@
-const users = ["Ade", "Ola", "Dan", "Pius"];
-const nums = [1, 3, 6, 8];
-const test = [true, false, false, true];
-// [{}, {}]
-const movies = [
-  {
-    id: 1,
-    title: "Die Hard",
-    rating: 4.0,
-    recent: true,
-    genre: ["action", "thriller", "suspense"],
-  }, //movie
-  {
-    id: 2,
-    title: "Mission Imposible",
-    rating: 4.7,
-    recent: false,
-    genre: ["action", "thriller", "fiction"],
-  },
-  {
-    id: 6,
-    title: "Mission Imposible 2",
-    rating: 4.5,
-    recent: true,
-    genre: ["action", "thriller", "fiction", "spy"],
-  },
-  {
-    id: 3,
-    title: "Spiderman",
-    rating: 4.2,
-    recent: true,
-    genre: ["action", "sci-fi", "supernatural"],
-  },
-  {
-    id: 4,
-    title: "Riverdale",
-    rating: 3.2,
-    recent: false,
-    genre: ["high school", "crime", "suspense"],
-  },
-  {
-    id: 7,
-    title: "Mission X",
-    rating: 2.4,
-    recent: false,
-    genre: ["spy", "thriller", "suspense"],
-  },
-  {
-    id: 8,
-    title: "Great Mission",
-    rating: 4.7,
-    recent: true,
-    genre: ["horror", "thriller", "suspense"],
-  },
+const cart = [
+  { title: "Headphones", price: 200, quantity: 2 },
+  { title: "Laptop", price: 1000, quantity: 1 },
+  { title: "Mouse", price: 50, quantity: 3 },
+  { title: "AirPods", price: 400, quantity: 2 },
+  { title: "TV", price: 1200, quantity: 2 },
 ];
+// total amount
+// 1. Write a function that prints out the title of each product in the cart array.
+const printTitle = () => {
+  cart.map((product) => {
+    console.log(product.title);
+  });
+};
+printTitle();
 
-// write a function called getMoviesByGenre, takes in a genre term
-// return all the movies that has the genreTerm in it
-const getMoviesByGenre = (genreTerm) => {
-  const searches = movies.filter((movie) =>
-    genreTerm.every((term) => movie.genre.includes(term))
+// 2. Write a function that calculates the total number of items (quantity) in the cart.
+const totalQuantity = () => cart.reduce((acc, curr) => acc + curr.quantity, 0);
+console.log(totalQuantity());
+
+// 3. Write a function that finds and prints the most expensive product in the cart.
+const mostExpensive = () => {
+  let expensive = cart[0].price; //
+  let myDetails;
+  cart.map((product) => {
+    if (product.price > expensive) {
+      expensive = product.price;
+      myDetails = product;
+    }
+  });
+  return myDetails;
+};
+console.log(mostExpensive());
+
+//4. Write a function that calculates the total value of the cart by multiplying the price
+//and quantity for each product, and then summing up the results.
+
+const totalValueInCart = () => {
+  const total = cart.reduce((acc, curr) => acc + curr.price * curr.quantity, 0);
+  return total;
+};
+console.log(totalValueInCart());
+
+//5. Write a function that filters and displays products that cost more 100
+
+//6. Write a function that checks if a certain product is in the cart
+// based on its title.e.g is Laptop in the cart
+const searchItemInCart = (searchTerm) => {
+  const item = cart.find(
+    (product) => product.title.toLowerCase() === searchTerm.toLowerCase()
   );
-  return searches;
+  if (item) {
+    return item;
+  } else {
+    return "That item is not in your cart";
+  }
 };
-console.log(getMoviesByGenre(["spy", "action"]));
-// every , some
+console.log(searchItemInCart("tv"));
 
-// write a function that takes in a searchTerm, get the movies that has the searchTerm in it
-// mission
-const searchForMovies = (searchTerm) => {
-  const searches = movies.filter((movie) =>
-    movie.title.toUpperCase().includes(searchTerm.toUpperCase())
-  );
-  return searches.length === 0 ? "No movies found" : searches;
+//7. Write a function that displays each product along with its total value (price * quantity).
+
+const displayItemValue = () => {
+  cart.forEach((product) => {
+    console.log(`${product.title} costs ${product.price * product.quantity}`);
+  });
 };
+displayItemValue();
 
-// write
-const recentlyAdded = () => {
-  const recents = movies.filter((movie) => movie.recent);
-  return recents;
+//8. Write a function that concatenates all the
+// product titles into a single string, separated by dash.
+const concatTitle = () => {
+  return cart.map((product) => product.title).join("-");
 };
-console.log(recentlyAdded());
+console.log(concatTitle());
 
-console.log(searchForMovies("amal")); //miss die hard, mission
-console.log(searchForMovies("spider")); //SPIDER
-console.log(searchForMovies(""));
+//9. Write a function that checks if the cart contains
+//any products that are more expensive than 70.
+const checkMore70 = () => {
+  return cart.some((product) => product.price > 70);
+};
+console.log(checkMore70());
 
-console.log(movies.length);
-console.log(movies[0].title.toUpperCase());
-// get movies that the rating is 4 and above
-
-const topRatedMovies = movies.filter((movie) => movie.rating >= 4);
-console.log(topRatedMovies);
-
-const changedTitle = movies.map((movie) => movie.title.toUpperCase());
-console.log(changedTitle);
-
-// get the first movie that the rating is more than 4
-const bestMovie = movies.find((movie) => movie.rating > 4);
-console.log(bestMovie);
-movies.push({ id: 5, title: "Batman", rating: 2.4 });
-console.log(movies);
-
-// return the id of the first movie that te rating is greater than 4
-const idMovie = movies.find((movie) => movie.rating > 4);
-console.log(idMovie.id);
+//10. Write a function that clears the entire cart (removes all products).
+const clearCart = () => [];
