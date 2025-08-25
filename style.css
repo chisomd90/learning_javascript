@@ -1,0 +1,15 @@
+/* input {
+  outline: none;
+} */
+
+.good {
+  text-align: center;
+}
+
+.success {
+  border: 2px solid green;
+}
+
+.error {
+  border: 2px solid red;
+}
